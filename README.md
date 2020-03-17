@@ -1,6 +1,57 @@
-# ⚛️ gatsby-starter-strict
+# ⚛️ Heralded App
 
-A Gatsby starter with strict linting and auto-formatting rules.
+An ease to use platform for informing groups.
+
+## Inspiration
+
+I'm not a designer, I depend on others generous work. Just like the work from [Narative](https://www.narative.co/).
+
+One of their projects drives the initial design of the this project: https://www.narative.co/labs/novela/
+
+### Table of Contents
+
+- [Why Novela?](#why-use-novela)
+
+- [Getting Started](#getting-started-with-gatsby-starter-novela)
+
+  - With Gatsby Starter Novela
+
+    - [Installation](#step-1-starter-installation)
+    - [Develop & Build](#step-2-develop--build)
+
+  - From scratch
+
+    - [Installation](#step-1-installation)
+    - [Folder structure](#step-2-folder-structure)
+    - [Using Novela Theme](#step-3-using-narativegatsby-theme-novela)
+    - [Adding an Author](#step-4-adding-an-author)
+    - [Adding a Post](#step-5-adding-a-post)
+    - [Configuring Site Metadata](#step-6-configuring-sitemetadata)
+
+- [Data Sources](#data-sources)
+
+  - [Local](#local)
+  - [Google Sheets](#contentful)
+
+- [Customization](#customization)
+
+  - [Enabling Author Pages](#enabling-author-pages)
+  - [Changing styles](#changing-styles)
+  - [Component shadowing](#component-shadowing)
+  - [Using images](#using-images)
+  - [Adding your logo](#adding-your-logo)
+  - [Adding Mailchimp](#adding-mailchimp)
+
+- [Data Models](#data-models)
+
+  - [Theme Options](#theme-options)
+  - [Author](#author)
+  - [Post](#post)
+  - [Site Metadata](#site-metadata)
+
+- [Future](#the-future)
+
+  <br />
 
 ## 🚀 Getting started
 
@@ -30,7 +81,7 @@ A Gatsby starter with strict linting and auto-formatting rules.
 
 ### Linting
 
-Source code is linted by [ESLint][], enforcing the [Airbnb JavaScript Style Guide][] through an overridable set of rules provided by [eslint-config-airbnb][].
+Source code is linted by [ESLint][], enforcing the [Airbnb JavaScript Style Guide][] through an override set of rules provided by [eslint-config-airbnb][].
 
 [eslint]: https://eslint.org/
 [airbnb javascript style guide]: https://github.com/airbnb/javascript
