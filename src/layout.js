@@ -203,13 +203,13 @@ export default (props) => {
           </Styled.a>
           <Styled.a
             as={Link}
-            to="/donate"
+            to="/support"
             sx={{
               variant: 'styles.navitem',
               mr: 4,
             }}
           >
-            Donate
+            Support
           </Styled.a>
           <Styled.a
             as={Link}

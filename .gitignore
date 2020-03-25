@@ -47,6 +47,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Cloud
+wrangler.toml
+
 # Environments
 .env
 .venv
@@ -60,4 +63,3 @@ venv.bak/
 logs
 *.log
 .netlify/
-wrangler.toml
