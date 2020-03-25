@@ -1,22 +1,14 @@
 /** @jsx jsx */
-import { jsx, Styled, useColorMode } from 'theme-ui'
-import { Link } from 'gatsby'
-import {
-  FaTwitter as Twitter,
-} from 'react-icons/fa'
+import { jsx, Styled, useColorMode } from 'theme-ui';
+import { Link } from 'gatsby';
+import { FaTwitter as Twitter } from 'react-icons/fa';
 
-const modes = [
-  'light',
-  'dark',
-]
+const modes = ['light', 'dark'];
 
-const ColorButton = ({
-  mode,
-  ...props
-}) =>
+const ColorButton = ({ mode, ...props }) => (
   <button
     {...props}
-    title='Cycle Color Mode'
+    title="Cycle Color Mode"
     sx={{
       display: 'inline-block',
       appearance: 'none',
@@ -30,23 +22,25 @@ const ColorButton = ({
         color: 'primary',
         boxShadow: '0 0 0 3px',
         outline: 'none',
-      }
-    }}>
+      },
+    }}
+  >
     <svg
-      viewBox='0 0 32 32'
-      width='24'
-      height='24'
-      fill='currentcolor'
+      viewBox="0 0 32 32"
+      width="24"
+      height="24"
+      fill="currentcolor"
       sx={{
         display: 'block',
-      }}>
+      }}
+    >
       <circle
-        cx='16'
-        cy='16'
-        r='14'
-        fill='none'
-        stroke='currentcolor'
-        strokeWidth='4'
+        cx="16"
+        cy="16"
+        r="14"
+        fill="none"
+        stroke="currentcolor"
+        strokeWidth="4"
       />
       <path
         d={`
@@ -57,6 +51,7 @@ const ColorButton = ({
       />
     </svg>
   </button>
+);
 
 const Draft = () => (
   <div
@@ -66,24 +61,26 @@ const Draft = () => (
       fontWeight: 'bold',
       color: 'background',
       bg: 'accent',
-    }}>
+    }}
+  >
     ⚠️ You are viewing an draft post, and this may not be ready for primetime.
   </div>
-)
+);
 
-export default props => {
-  const [mode, setMode] = useColorMode()
-  const cycleMode = e => {
-    const i = modes.indexOf(mode)
-    const n = (i + 1) % modes.length
-    setMode(modes[n])
-  }
-  const title = props.pageContext?.frontmatter?.title
-  let date = props.pageContext?.frontmatter?.date
-  if (date) date = new Date(date).toLocaleDateString('en-US', {
-    timeZone: 'UTC',
-  })
-  const draft = props.pageContext?.frontmatter?.draft
+export default (props) => {
+  const [mode, setMode] = useColorMode();
+  const cycleMode = (e) => {
+    const i = modes.indexOf(mode);
+    const n = (i + 1) % modes.length;
+    setMode(modes[n]);
+  };
+  const title = props.pageContext?.frontmatter?.title;
+  let date = props.pageContext?.frontmatter?.date;
+  if (date)
+    date = new Date(date).toLocaleDateString('en-US', {
+      timeZone: 'UTC',
+    });
+  const draft = props.pageContext?.frontmatter?.draft;
 
   return (
     <div
@@ -92,7 +89,8 @@ export default props => {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-      }}>
+      }}
+    >
       <header
         sx={{
           width: '100%',
@@ -102,15 +100,17 @@ export default props => {
           mx: 'auto',
           px: 3,
           py: 4,
-        }}>
+        }}
+      >
         <Styled.a
           as={Link}
-          to='/'
+          to="/"
           sx={{
             variant: 'styles.navitem',
             fontSize: 0,
             mr: 3,
-          }}>
+          }}
+        >
           Heralded
         </Styled.a>
         {/* <Styled.a
@@ -124,10 +124,7 @@ export default props => {
           Blog
         </Styled.a> */}
         <div sx={{ mx: 'auto' }} />
-        <ColorButton
-          mode={mode}
-          onClick={cycleMode}
-        />
+        <ColorButton mode={mode} onClick={cycleMode} />
       </header>
       <main
         sx={{
@@ -136,23 +133,22 @@ export default props => {
           px: 3,
           mx: 'auto',
           flex: '1 1 auto',
-        }}>
+        }}
+      >
         <div
           sx={{
             maxWidth: !!title ? 'container' : null,
-          }}>
+          }}
+        >
           {draft && <Draft />}
-          {title && (
-            <Styled.h1>
-              {title}
-            </Styled.h1>
-          )}
+          {title && <Styled.h1>{title}</Styled.h1>}
           {date && (
             <div
               sx={{
                 variant: 'text.small',
                 fontWeight: 'bold',
-              }}>
+              }}
+            >
               {date}
             </div>
           )}
@@ -166,21 +162,24 @@ export default props => {
           width: '100%',
           maxWidth: 'wide',
           mx: 'auto',
-        }}>
+        }}
+      >
         <div
           sx={{
             py: 4,
             display: 'flex',
             justifyContent: 'center',
-          }}>
+          }}
+        >
           <a
-            href='https://twitter.com/HeraldedApp'
-            title='Twitter'
+            href="https://twitter.com/HeraldedApp"
+            title="Twitter"
             sx={{
               variant: 'styles.navitem',
               ml: 2,
               mr: 3,
-            }}>
+            }}
+          >
             <Twitter size={24} />
           </a>
         </div>
@@ -190,29 +189,52 @@ export default props => {
             flexWrap: 'wrap',
             alignItems: 'center',
             fontSize: 0,
-          }}>
+          }}
+        >
           <Styled.a
             as={Link}
-            to='/'
+            to="/"
             sx={{
               variant: 'styles.navitem',
               mr: 3,
-            }}>
+            }}
+          >
             Heralded
           </Styled.a>
           <Styled.a
             as={Link}
-            to='/about'
+            to="/donate"
             sx={{
               variant: 'styles.navitem',
               mr: 4,
-            }}>
+            }}
+          >
+            Donate
+          </Styled.a>
+          <Styled.a
+            as={Link}
+            to="/about"
+            sx={{
+              variant: 'styles.navitem',
+              mr: 4,
+            }}
+          >
             About
           </Styled.a>
           <div sx={{ mx: 'auto' }} />
-          <div sx={{ my: 2 }}>© 2020 Heralded</div>
+          <div sx={{ my: 2 }}>
+            &copy;:{' '}
+            <a
+              href="https://www.measuredstudios.com/"
+              rel="noopener"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Measured Studios
+            </a>
+          </div>
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};

@@ -8,7 +8,7 @@ export default {
     primary: 'hsl(240, 100%, 57%)',
     secondary: 'hsl(260, 100%, 57%)',
     accent: '#6166DC',
-    muted: '#f9f9fc',
+    muted: '#2c3e50',
     gray: '#555',
     modes: {
       dark: {
@@ -23,7 +23,8 @@ export default {
     },
   },
   fonts: {
-    body: 'system-ui, sans-serif',
+    body:
+      "'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
     monospace: '"Roboto Mono", Menlo, monospace',
   },
   lineHeights: {
@@ -83,7 +84,7 @@ export default {
       mb: 3,
     },
     h3: {
-      // variant: 'text.heading',
+      variant: 'text.heading',
       fontSize: 2,
     },
     h4: {
@@ -163,6 +164,95 @@ export default {
       display: 'inline-flex',
       alignItems: 'center',
       fontWeight: 'bold',
+    },
+  },
+  forms: {
+    input: {
+      bg: 'elevated',
+      color: 'text',
+      fontFamily: 'inherit',
+      borderRadius: 'base',
+      boxShadow: 'small',
+      transition: 'box-shadow .125s ease-in-out',
+      border: 0,
+      ':hover,:focus': {
+        boxShadow: 'card',
+      },
+      '::-webkit-input-placeholder': {
+        color: 'placeholder',
+      },
+      '::-moz-placeholder': {
+        color: 'placeholder',
+      },
+      ':-ms-input-placeholder': {
+        color: 'placeholder',
+      },
+      '&[type="search"]::-webkit-search-decoration': {
+        display: 'none',
+      },
+    },
+    label: {
+      color: 'text',
+      fontWeight: 'medium',
+    },
+    hidden: {
+      position: 'absolute',
+      height: '1px',
+      width: '1px',
+      overflow: 'hidden',
+      clip: 'rect(1px, 1px, 1px, 1px)',
+      whiteSpace: 'nowrap',
+    },
+  },
+  cards: {
+    primary: {
+      bg: 'elevated',
+      color: 'text',
+      p: [3, 4],
+      borderRadius: 'extra',
+      boxShadow: 'card',
+      overflow: 'hidden',
+      input: {
+        boxShadow: 'none !important',
+      },
+    },
+    sunken: {
+      bg: 'sunken',
+      p: [3, 4],
+      borderRadius: 'extra',
+      'input, a': {
+        bg: 'header',
+        boxShadow: 'none !important',
+      },
+    },
+    interactive: {
+      variant: 'cards.primary',
+      WebkitTapHighlightColor: 'transparent',
+      transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
+      ':hover,:focus': {
+        transform: 'scale(1.0625)',
+        boxShadow: 'elevated',
+      },
+    },
+    event: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: 128,
+      color: 'white',
+      textAlign: 'center',
+      textShadow: '0 1px 4px rgba(0, 0, 0, 0.375)',
+      textDecoration: 'none',
+      backgroundColor: 'black',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      borderRadius: 'extra',
+      overflow: 'hidden',
+      position: 'relative',
+      p: 3,
+      height: '100%',
     },
   },
 };

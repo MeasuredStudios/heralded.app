@@ -5,6 +5,8 @@ module.exports = {
     siteUrl: 'https://www.heralded.app/',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -12,24 +14,18 @@ module.exports = {
       },
     },
     'gatsby-plugin-theme-ui',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Roboto Mono'],
+        fonts: ['Roboto Mono', 'Roboto'],
       },
     },
     'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: '',
+        trackingId: 'UA-161792683-1',
       },
-    },
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: require('./feed'),
     },
   ],
 };

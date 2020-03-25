@@ -60,3 +60,4 @@ venv.bak/
 logs
 *.log
 .netlify/
+wrangler.toml

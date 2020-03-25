@@ -1,16 +1,20 @@
 /** @jsx jsx */
+import { Link } from 'gatsby';
+import { kebabCase, snakeCase, startCase } from 'lodash';
 import {
-  jsx,
-  Card,
-  Heading,
-  Text,
-  Grid,
-  Label,
-  Input,
-  Button,
-  Spinner,
   Alert,
+  Button,
+  Card,
+  Grid,
+  Heading,
+  Input,
+  jsx,
+  Label,
+  Spinner,
+  Text,
 } from 'theme-ui';
+
+import { regions } from './lib/regions.json';
 
 export const Banner = (props) => (
   <div
@@ -104,7 +108,7 @@ export const Call = (props) => (
     variant="sunken"
     sx={{ maxWidth: 'narrowPlus', mx: 'auto', mt: [3, 4] }}
   >
-    <Heading as="h2" variant="subheadline" sx={{ mb: 1 }}>
+    <Heading variant="text.heading" as="h2" sx={{ mb: 1 }}>
       Do the Five!
     </Heading>
     <Text sx={{ color: 'muted' }}>
@@ -139,4 +143,60 @@ export const Call = (props) => (
       </Button>
     </Grid>
   </Card>
+);
+
+export const Region = ({ showAll = false, sx = {}, ...props }) => (
+  <Grid
+    columns={[1, 2, 4]}
+    gap={[3, 4]}
+    sx={{
+      mt: [4, 5],
+      mb: [4, 5],
+      ...sx,
+      a: {
+        WebkitTapHighlightColor: 'transparent',
+        transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
+        ':hover,:focus': {
+          transform: 'scale(1.0625)',
+          boxShadow: 'elevated',
+        },
+      },
+    }}
+  >
+    {showAll && (
+      <Link to="/" passHref>
+        <Card
+          variant="primary"
+          sx={{
+            bg: 'elevated',
+            color: 'primary',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textDecoration: 'none',
+            fontSize: 3,
+            fontWeight: 'bold',
+          }}
+        >
+          All Events
+        </Card>
+      </Link>
+    )}
+    {Object.entries(regions).map(([name, url]) => (
+      <Link to={`regions/${kebabCase(name)}`} key={name}>
+        <Card
+          variant="event"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.375) 75%),
+              url(${url})`,
+          }}
+        >
+          <Heading as="h3" sx={{ fontSize: 3 }}>
+            {startCase(name)}
+          </Heading>
+        </Card>
+      </Link>
+    ))}
+  </Grid>
 );
