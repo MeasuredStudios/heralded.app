@@ -53,20 +53,6 @@ const ColorButton = ({ mode, ...props }) => (
   </button>
 );
 
-const Draft = () => (
-  <div
-    sx={{
-      p: 3,
-      my: 4,
-      fontWeight: 'bold',
-      color: 'background',
-      bg: 'accent',
-    }}
-  >
-    ⚠️ You are viewing an draft post, and this may not be ready for primetime.
-  </div>
-);
-
 export default (props) => {
   const [mode, setMode] = useColorMode();
   const cycleMode = (e) => {
@@ -80,7 +66,6 @@ export default (props) => {
     date = new Date(date).toLocaleDateString('en-US', {
       timeZone: 'UTC',
     });
-  const draft = props.pageContext?.frontmatter?.draft;
 
   return (
     <div
@@ -107,22 +92,12 @@ export default (props) => {
           to="/"
           sx={{
             variant: 'styles.navitem',
-            fontSize: 0,
             mr: 3,
+            fontWeight: 'bold',
           }}
         >
           Heralded
         </Styled.a>
-        {/* <Styled.a
-          as={Link}
-          to='/blog'
-          sx={{
-            variant: 'styles.navitem',
-            fontSize: 0,
-            mr: 3,
-          }}>
-          Blog
-        </Styled.a> */}
         <div sx={{ mx: 'auto' }} />
         <ColorButton mode={mode} onClick={cycleMode} />
       </header>
@@ -140,7 +115,6 @@ export default (props) => {
             maxWidth: !!title ? 'container' : null,
           }}
         >
-          {draft && <Draft />}
           {title && <Styled.h1>{title}</Styled.h1>}
           {date && (
             <div
@@ -196,20 +170,10 @@ export default (props) => {
             to="/"
             sx={{
               variant: 'styles.navitem',
-              mr: 3,
-            }}
-          >
-            Heralded
-          </Styled.a>
-          <Styled.a
-            as={Link}
-            to="/support"
-            sx={{
-              variant: 'styles.navitem',
               mr: 4,
             }}
           >
-            Support
+            Heralded
           </Styled.a>
           <Styled.a
             as={Link}
@@ -221,17 +185,39 @@ export default (props) => {
           >
             About
           </Styled.a>
+          <Styled.a
+            as={Link}
+            to="/grow"
+            sx={{
+              variant: 'styles.navitem',
+              mr: 4,
+            }}
+          >
+            Grow
+          </Styled.a>
+          <Styled.a
+            as={Link}
+            to="/support"
+            sx={{
+              variant: 'styles.navitem',
+              mr: 4,
+            }}
+          >
+            Support
+          </Styled.a>
           <div sx={{ mx: 'auto' }} />
           <div sx={{ my: 2 }}>
-            &copy;:{' '}
-            <a
+          <Styled.a
+              sx={{
+
+              }}
               href="https://www.measuredstudios.com/"
               rel="noopener"
               rel="noreferrer"
               target="_blank"
             >
               Measured Studios
-            </a>
+              </Styled.a>
           </div>
         </div>
       </footer>

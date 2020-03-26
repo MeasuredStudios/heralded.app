@@ -33,7 +33,7 @@ const Page = (props) => {
           name="description"
           content="A list of resources for the Hospitality industry."
         />
-        <meta name="heralded-app" content="Heralded" />
+        <meta name="heralded" content="Heralded" />
         <meta name="theme-color" content="#211a23" />
 
         <link

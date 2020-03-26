@@ -2,34 +2,29 @@
 import { Link } from 'gatsby';
 import { kebabCase, snakeCase, startCase } from 'lodash';
 import {
-  Alert,
+  Box,
   Button,
   Card,
+  Flex,
   Grid,
   Heading,
   Input,
   jsx,
   Label,
-  Spinner,
+  Styled,
   Text,
 } from 'theme-ui';
 
 import { regions } from './lib/regions.json';
+
+import grow from './assets/grow.jpg';
+import donate from './assets/donate.jpg';
 
 export const Banner = (props) => (
   <div
     sx={{
       pb: [4, 5, 6],
       fontWeight: 'bold',
-      ul: {
-        listStyle: 'none',
-        display: 'flex',
-        p: 0,
-        m: 0,
-      },
-      li: {
-        mr: 3,
-      },
       a: {
         color: 'inherit',
         textDecoration: 'none',
@@ -192,11 +187,93 @@ export const Region = ({ showAll = false, sx = {}, ...props }) => (
               url(${url})`,
           }}
         >
-          <Heading as="h3" sx={{ fontSize: 3 }}>
+          <Styled.h1 as="h3" sx={{ fontSize: 3 }}>
             {startCase(name)}
-          </Heading>
+          </Styled.h1>
         </Card>
       </Link>
     ))}
   </Grid>
+);
+
+export const TagLineA = () => (
+  <Box sx={{ py: [3, 4, 5] }}>
+    <Box sx={{ maxWidth: 800, mx: 'auto' }}>
+      <Styled.h1 as="h3" sx={{ m: 0 }}>
+        What is a block?
+      </Styled.h1>
+      <Styled.p sx={{ m: 0, maxWidth: 600 }}>
+        A Block refers to a piece of content or a component. It&lsquo;s a
+        section of your content while a document is a collection of blocks.
+      </Styled.p>
+      <Styled.p sx={{ mb: 0, maxWidth: 600 }}>
+        Blocks can be simple like a paragraph of text or even a box with a
+        tomato background color. Blocks can be complex like an embedded
+        spreadsheet or a chart that fetches live data.
+      </Styled.p>
+    </Box>
+  </Box>
+);
+
+export const HeroA = () => (
+  <Flex sx={{ alignItems: 'center', py: [3, 4, 5] }}>
+    <Box sx={{ pr: 3 }}>
+      <Styled.h1 sx={{ fontSize: [5, 6, 8], m: 0 }}>HERALDED</Styled.h1>
+      <Styled.p sx={{ fontSize: [2, 3, 4], m: 0 }}>
+        A list of resources for the Hospitality industry.
+        <br />
+        ... more resources are coming. In the mean time, follow us on
+        Twitter&nbsp;
+        <Styled.a
+          sx={{
+            variant: 'styles.navitem', py: [3, 4, 5],
+          }}
+          href="https://twitter.com/HeraldedApp"
+          rel="noopener"
+          rel="noreferrer"
+          target="_blank"
+        >
+          @HeraldedApp
+        </Styled.a>
+        .
+      </Styled.p>
+      <Box
+        sx={{
+          pt: 3,
+          p: 0,
+          m: 0,
+          display: 'grid',
+          gridGap: 4,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
+        }}
+      >
+        <Link to="/grow">
+          <Card
+            variant="event"
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.375) 75%),
+              url(${grow})`,
+            }}
+          >
+            <Styled.h1 as="h3" sx={{ fontSize: 3 }}>
+              GROW
+            </Styled.h1>
+          </Card>
+        </Link>
+        <Link to="/donate">
+          <Card
+            variant="event"
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.375) 75%),
+              url(${donate})`,
+            }}
+          >
+            <Styled.h1 as="h3" sx={{ fontSize: 3 }}>
+              DONATE
+            </Styled.h1>
+          </Card>
+        </Link>
+      </Box>
+    </Box>
+  </Flex>
 );
