@@ -16,7 +16,7 @@ const Page = (props) => {
       props.data,
       'post.excerpt',
       get(props, 'pageContext.frontmatter.excerpt')
-    ) || 'Resources gathered by @JovaniPink';
+    ) || 'Hospitality resources gathered by @JovaniPink';
 
   if (postTitle) {
     title = `${postTitle} | ${title}`;

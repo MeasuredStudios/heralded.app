@@ -18,7 +18,7 @@ import {
 import { regions } from './lib/regions.json';
 
 import grow from './assets/grow.jpg';
-import donate from './assets/donate.jpg';
+import support from './assets/donate.jpg';
 
 export const Banner = (props) => (
   <div
@@ -260,16 +260,16 @@ export const HeroA = () => (
             </Styled.h1>
           </Card>
         </Link>
-        <Link to="/donate">
+        <Link to="/support">
           <Card
             variant="event"
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.375) 75%),
-              url(${donate})`,
+              url(${support})`,
             }}
           >
             <Styled.h1 as="h3" sx={{ fontSize: 3 }}>
-              DONATE
+              SUPPORT
             </Styled.h1>
           </Card>
         </Link>
