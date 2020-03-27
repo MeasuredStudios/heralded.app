@@ -226,7 +226,8 @@ export const HeroA = () => (
         Twitter&nbsp;
         <Styled.a
           sx={{
-            variant: 'styles.navitem', py: [3, 4, 5],
+            variant: 'styles.navitem',
+            py: [3, 4, 5],
           }}
           href="https://twitter.com/HeraldedApp"
           rel="noopener"
@@ -276,4 +277,47 @@ export const HeroA = () => (
       </Box>
     </Box>
   </Flex>
+);
+
+export const HeroBGNewsletter = () => (
+  <Box
+    sx={{
+      py: 4,
+    }}
+  >
+    <Flex sx={{ alignItems: 'center', py: [3, 4, 5] }}>
+      <Box sx={{ pr: 3 }}>
+        <Styled.h6
+          sx={{ mb: 1, textTransform: 'uppercase', color: 'secondary' }}
+        >
+          Coming Soon
+        </Styled.h6>
+        <Styled.h1 sx={{ fontSize: [5, 6, 8], m: 0 }}>Some product</Styled.h1>
+        <Styled.p sx={{ fontSize: [2, 3, 4], m: 0, color: 'secondary' }}>
+          This is a hero, with some convincing copy and a call to action.
+        </Styled.p>
+        <Styled.p sx={{ mt: [3, 4, 4], mb: 2 }}>
+          Sign up for project updates and releases.
+        </Styled.p>
+        <Flex>
+          <Input
+            sx={{
+              maxWidth: '18rem',
+            }}
+            placeholder={'hello@example.com'}
+          />
+          <Button
+            sx={{
+              color: '#471091',
+              backgroundColor: '#acaedf',
+              ml: 3,
+              fontWeight: 600,
+            }}
+          >
+            Subscribe
+          </Button>
+        </Flex>
+      </Box>
+    </Flex>
+  </Box>
 );
