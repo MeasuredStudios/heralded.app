@@ -179,19 +179,24 @@ export const Region = ({ showAll = false, sx = {}, ...props }) => (
       </Link>
     )}
     {Object.entries(regions).map(([name, url]) => (
-      <Link to={`regions/${kebabCase(name)}`} key={name}>
+      <Styled.a
+        href={`${url[1]}`}
+        rel="noopener noreferrer"
+        target="_blank"
+        key={name}
+      >
         <Card
           variant="event"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.375) 75%),
-              url(${url})`,
+              url(${url[0]})`,
           }}
         >
           <Styled.h1 as="h3" sx={{ fontSize: 3 }}>
             {startCase(name)}
           </Styled.h1>
         </Card>
-      </Link>
+      </Styled.a>
     ))}
   </Grid>
 );
@@ -216,29 +221,27 @@ export const TagLineA = () => (
 );
 
 export const HeroA = () => (
-  <Flex sx={{ alignItems: 'center', py: [3, 4, 5] }}>
+  <Flex sx={{ flexDirection: 'column', py: [3, 4, 5] }}>
     <Box sx={{ pr: 3 }}>
       <Styled.h1 sx={{ fontSize: [5, 6, 8], m: 0 }}>HERALDED</Styled.h1>
       <Styled.p sx={{ fontSize: [2, 3, 4], m: 0 }}>
-        A list of resources for the Hospitality industry.
+        A list of resources for the service industry.
         <br />
-        ... more resources are coming. In the mean time, follow us on
-        Twitter&nbsp;
+        ... which has moved to its proper place &nbsp;
         <Styled.a
           sx={{
             variant: 'styles.navitem',
             py: [3, 4, 5],
           }}
-          href="https://twitter.com/HeraldedApp"
-          rel="noopener"
-          rel="noreferrer"
+          href="https://www.orlandoservicerelief.com/"
+          rel="noopener noreferrer"
           target="_blank"
         >
-          @HeraldedApp
+          Orlando Service Relief
         </Styled.a>
         .
       </Styled.p>
-      <Box
+      {/* <Box
         sx={{
           pt: 3,
           p: 0,
@@ -274,7 +277,27 @@ export const HeroA = () => (
             </Styled.h1>
           </Card>
         </Link>
-      </Box>
+      </Box> */}
+    </Box>
+    <Box sx={{ pr: 3 }}>
+      <Card
+        variant="event"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.375) 75%),
+              url(${'https://images.unsplash.com/photo-1532375672241-878084a41e96?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9'})`,
+        }}
+      >
+        <Styled.a
+          sx={{
+            variant: 'styles.navitem',
+          }}
+          href="https://www.orlandoservicerelief.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {startCase('Orlando')}
+        </Styled.a>
+      </Card>
     </Box>
   </Flex>
 );

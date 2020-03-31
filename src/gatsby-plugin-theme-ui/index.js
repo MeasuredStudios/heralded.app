@@ -239,7 +239,7 @@ export default {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      minHeight: 128,
+      minHeight: 196,
       color: 'white',
       textAlign: 'center',
       textShadow: '0 1px 4px rgba(0, 0, 0, 0.375)',

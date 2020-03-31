@@ -185,7 +185,7 @@ export default (props) => {
           >
             About
           </Styled.a>
-          <Styled.a
+          {/* <Styled.a
             as={Link}
             to="/grow"
             sx={{
@@ -204,12 +204,12 @@ export default (props) => {
             }}
           >
             Support
-          </Styled.a>
+          </Styled.a> */}
           <div sx={{ mx: 'auto' }} />
           <div sx={{ my: 2 }}>
           <Styled.a
               sx={{
-
+                variant: 'styles.navitem',
               }}
               href="https://www.measuredstudios.com/"
               rel="noopener"
