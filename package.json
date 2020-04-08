@@ -37,7 +37,7 @@
     "gatsby-plugin-catch-links": "2.2.1",
     "gatsby-plugin-feed": "2.4.1",
     "gatsby-plugin-google-fonts": "1.0.1",
-    "gatsby-plugin-mdx": "1.1.5",
+    "gatsby-plugin-mdx": "1.1.6",
     "gatsby-plugin-theme-ui": "0.3.0",
     "gatsby-plugin-twitter": "2.2.2",
     "lodash.get": "4.4.2",
