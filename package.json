@@ -85,7 +85,7 @@
     "@testing-library/user-event": "10.0.2",
     "@testing-library/jest-dom": "5.5.0",
     "husky": "4.2.5",
-    "lint-staged": "10.1.5",
+    "lint-staged": "10.1.6",
     "lodash": "4.17.15"
   },
   "scripts": {
