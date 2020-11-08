@@ -47,7 +47,7 @@
     "react-icons": "3.11.0",
     "remark": "13.0.0",
     "remark-html": "13.0.1",
-    "theme-ui": "0.3.1"
+    "theme-ui": "0.3.3"
   },
   "devDependencies": {
     "@types/babel-core": "6.25.6",
