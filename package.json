@@ -86,7 +86,7 @@
     "@testing-library/jest-dom": "5.11.9",
     "husky": "5.0.9",
     "lint-staged": "10.5.4",
-    "lodash": "4.17.20"
+    "lodash": "4.17.21"
   },
   "scripts": {
     "build": "gatsby build",
